@@ -29,7 +29,6 @@ with st.form(key = 'concrete_form'):
 
 data = np.array(data).reshape(1, -1)
 
-pred = loaded_model.predict(data)
 
 # target = ['SLUMP (cm)', 'FLOW (cm)', '28-day Compressive Strength (Mpa)']
 
