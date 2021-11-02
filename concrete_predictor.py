@@ -11,8 +11,6 @@ import numpy as np
 
 st.title('Concrete Properties Predictor')
 
-filename = 'model.sav'
-loaded_model = pickle.load(open(filename, 'rb'))
 
 features = ['Cement', 'Slag', 'Fly Ash', 'Water', 'Super Plasticizer, SP', 'Coarse Aggregate', 'Fine Aggregate']
 
@@ -26,9 +24,9 @@ with st.form(key = 'concrete_form'):
     for i,x in enumerate(features):
         #data.append(st.number_input('%s (kg)' %(x),key=str(i)))
         data.append(st.slider(label='%s (kg)' %(x), min_value=0.0, max_value=max_values[i], value=values[i], step=0.1, key=str(i)))
-        
+
     submit_button = st.form_submit_button(label='Submit')
-    
+
 data = np.array(data).reshape(1, -1)
 
 pred = loaded_model.predict(data)
@@ -38,7 +36,7 @@ pred = loaded_model.predict(data)
 # st.header('Prediction 1')
 # for i, x in enumerate(target):
 #     st.subheader('%s: %d' %(x,pred[:,i]))
-    
+
 
 
 # filename = 'model_ANN.sav'
@@ -47,8 +45,8 @@ pred = loaded_model.predict(data)
 # st.header('Prediction 2')
 # for i, x in enumerate(target):
 #     st.subheader('%s: %d' %(x,pred[:,i]))
-    
-    
+
+
 
 st.header('Prediction')
 
