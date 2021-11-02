@@ -11,7 +11,7 @@ import numpy as np
 from PIL import Image
 
 #Start of the app
-c1, c2, c3 = st.beta_columns([1,5,1])
+c1, c2, c3 = st.beta_columns([1,3,1])
 with c1:
     image = Image.open('Final Logo DTSF.png')
     st.image(image)
