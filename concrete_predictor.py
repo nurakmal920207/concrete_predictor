@@ -8,8 +8,20 @@ Created on Mon Oct 18 16:38:48 2021
 import pickle
 import streamlit as st
 import numpy as np
+from PIL import Image
 
-st.title('Concrete Properties Predictor')
+#Start of the app
+c1, c2, c3 = st.beta_columns([1,4,1])
+with c1:
+    image = Image.open('Final Logo DTSF.png')
+    st.image(image)
+
+with c2:
+    st.title('Concrete Properties Predictor')
+
+with c3:
+    image = Image.open('CIMA Logo.png')
+    st.image(image)
 
 
 features = ['Cement', 'Slag', 'Fly Ash', 'Water', 'Super Plasticizer, SP', 'Coarse Aggregate', 'Fine Aggregate']
